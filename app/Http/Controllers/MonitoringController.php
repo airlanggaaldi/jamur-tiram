@@ -28,9 +28,15 @@ class MonitoringController extends Controller
     public function insert(Request $request)
     {
         (float)$suhu = $request['suhu'];
+        (float)$kelembapan = $request['kelembapan'];
+        (float)$status_kipas = $request['status_kipas'];
+        (float)$status_mist_maker = $request['status_mist_maker'];
 
         $post = Monitoring::create([
             'suhu' => $suhu,
+            'kelembapan' => $kelembapan,
+            'status_kipas' => $status_kipas,
+            'status_mist_maker' => $status_mist_maker,
         ]);
 
         return response()->json('success');
